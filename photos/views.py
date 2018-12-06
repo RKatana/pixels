@@ -12,3 +12,9 @@ def index(request):
     context = {"images":images}
 
     return render(request,"index.html",context)
+
+def search(request):
+    if "term" in request.GET and request.GET["term"]:
+        term = request.GET.get("term")
+        photos = Image.search_image(term)
+        return render(request, "search.html", {"images":photos})

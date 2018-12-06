@@ -1,0 +1,10 @@
+<div class="landing">
+    {% include "navbar.html" %}
+    <div class="form-container">
+        <form action="{%url 'search'%}" role="search" class="back-form form-inline">
+            <input class="form-control" name="term" type="text" placeholder="Search for photos ...">
+            <a id="search-btn" class="btn btn-info">Search</a>
+        </form>
+        <p class="under">Suggested: funny,animals</p>
+    </div>
+</div>

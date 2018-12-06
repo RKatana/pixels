@@ -97,7 +97,9 @@ class Image(models.Model):
         """
         This is the method to search images based on a specific category
         """
-        return cls.objects.filter(category__icontains = category)
+        searched_category = Category.objects.get(name  = category)
+
+        return cls.objects.filter(category_id = searched_category.id)
 
     @classmethod
     def filter_by_location(cls,location):

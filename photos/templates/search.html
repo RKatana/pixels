@@ -1,0 +1,51 @@
+{% load bootstrap3%}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{title}}</title>
+    {% block styles%}
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="../../static/css/index.css">
+    {% endblock %}
+    <script src="../../static/js/masonry.pkgd.min.js"></script>
+</head>
+
+<body>
+    {% include "navbar.html" %}
+    <div class="container-fluid">
+        <h1 class="display-4 text-center"></h1>
+        <div class="row grid flex">
+            {% for image in images%}
+            <div class="grid-item">
+                <img class="image" src="{{image.image_url.url}}" alt="">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% block scripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    {% bootstrap_javascript %}
+    <script>
+        var elem = document.querySelector('.grid');
+        var msnry = new Masonry(elem, {
+            // options
+            itemSelector: '.grid-item',
+            columnWidth: 200
+        });
+
+        // element argument can be a selector string
+        // for an individual element
+        var msnry = new Masonry('.grid', {
+            // options
+        })
+    </script>
+    {% endblock %}
+
+</body>
+
+</html>
