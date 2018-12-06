@@ -16,8 +16,8 @@
     {% endblock %}
 </head>
 <body>
-    <div class="">
-        <div class="grid">
+    <div class="container-fluid">
+        <div class="row grid flex">
             {% for image in images%}
                 <div class="grid-item">
                     <img class="image" src="{{image.image_url.url}}" alt="">
