@@ -19,7 +19,9 @@ nav {
     background: transparent;
     margin-bottom: 15px;
     border: none;
+    transition: background 0.8s
 }
+
 .shrink {
     background: #101010;
 }
@@ -60,4 +62,11 @@ nav a {
 .under {
     color: white;
     margin: 1%;
+}
+.navbar-right {
+    display: inline-block
+}
+.navbar-form {
+    display: none;
+    transition: display 0.8s
 }
