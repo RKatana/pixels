@@ -25,6 +25,8 @@ class Location(models.Model):
         """
         Location.objects.get(id = self.id).update(field = val)
 
+    def __str__(self):
+        return self.name
 
 class Category(models.Model):
     """
@@ -49,6 +51,8 @@ class Category(models.Model):
         """
         Location.objects.get(id = self.id).update(field = val)
 
+    def __str__(self):
+        return self.name
 class Image(models.Model):
     """
     This is the class we will use to create images
@@ -101,4 +105,5 @@ class Image(models.Model):
         This is the method to get images taken in a certain location
         """
         return cls.objects.filter(location = location)
-
+    def __str__(self):
+        return self.name
