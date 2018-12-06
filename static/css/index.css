@@ -45,13 +45,19 @@ nav a {
     margin-left: 28%;
     margin-top: 16%;
 }
-form .form-control {
+.back-form .form-control {
     width: 60%;
     height: 50px;
     display: inline-block;
 }
-form a {
+#search-btn {
     height: 50px;
     display: flex;
     align-items: center;
+    display: inline-block;
+}
+
+.under {
+    color: white;
+    margin: 1%;
 }
