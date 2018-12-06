@@ -30,10 +30,28 @@ nav {
     background-repeat: no-repeat;
     height: 500px;
     background-attachment: fixed;
+    width: 100%;
 }
 nav a {
     color: white;
+    transition: background 0.8s;
 }
+
 .navbar-brand {
     color: white;
+    font-size: 27px;
+}
+.form-container {
+    margin-left: 28%;
+    margin-top: 16%;
+}
+form .form-control {
+    width: 60%;
+    height: 50px;
+    display: inline-block;
+}
+form a {
+    height: 50px;
+    display: flex;
+    align-items: center;
 }
