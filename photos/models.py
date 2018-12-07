@@ -59,7 +59,7 @@ class Image(models.Model):
     """
     image_url = models.ImageField(upload_to = "images/")
     name = models.CharField(max_length = 30)
-    description = models.CharField(max_length = 40)
+    description = models.TextField()
     location = models.ForeignKey(Location)
     category = models.ForeignKey(Category)
 
