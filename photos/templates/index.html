@@ -1,4 +1,4 @@
-{% load bootstrap3%}
+{% load bootstrap4%}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -15,38 +15,38 @@
 </head>
 
 <body>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img style="height: 400px;width: 100%;" alt="" class="mod-img">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
     {% include "landing.html" %}
     <div class="container-fluid">
-        <h1 class="display-4 text-center">Welcome to pIxElS</h1>
+        <h1 class=" text-center">Welcome to pIxElS</h1>
         <div class="row grid flex">
             {% for image in images%}
                 <div class="grid-item">
-                <a href="#" type="button" data-toggle="modal" data-target="#myModal"><img class="image"
-                src="{{image.image_url.url}}" alt=""></a>
-                </div>
-                <!-- Button trigger modal -->
-
-                <!-- Modal -->
-                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                            </div>
-                            <div class="modal-body">
-                                ...
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
-                        </div>
-                    </div>
+                    <img class="image" src="{{image.image_url.url}}" alt="">
+                    <button class="btn modal-btn btn-outline-info" onclick="showModal('{{image.image_url.url}}')" style="position:absolute;top:46%;left:40%;">hey</button>
                 </div>
             {% endfor %}
         </div>
     </div>
+
     {% block scripts %}
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         {% bootstrap_javascript %}
@@ -64,9 +64,8 @@
                 // options
             })
         </script>
-
-        <script src="../../static/js/jquery-3.3.1.js"></script>
         <script src="../../static/js/nav.js"></script>
+        <script src="../../static/js/modal.js"></script>
 
     {% endblock %}
 
