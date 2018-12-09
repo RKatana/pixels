@@ -1,5 +1,5 @@
 virtual/
 settings.py
-env
+.env
 requirements.txt
 runtime.txt
