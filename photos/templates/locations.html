@@ -1,0 +1,47 @@
+{% load bootstrap4%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    {% block styles%}
+        {% bootstrap_css %}
+        <link rel="stylesheet" href="../../static/css/locations.css">
+    {% endblock %}
+</head>
+<body>
+    {% include "navbar.html" %}
+    <div id="locations">
+        <div class="row row1">
+            <div class="location col-sm-12 col-md-3">
+                <img class="location-img" src="../../media/images/africa.jpeg" alt="">
+                <a href="{% url 'locations' 'Africa'%}"><h3 class="text-center">Africa</h3></a>
+            </div>
+            <div class="location col-sm-12 col-md-3">
+                <img class="location-img" src="../../media/images/america.jpeg" alt="">
+                <a href="{% url 'locations' 'America' %}"><h3 class="text-center">America</h3></a>
+            </div>
+            <div class="location col-sm-12 col-md-3">
+                <img class="location-img" src="../../media/images/asia.jpeg" alt="">
+                <a href="{% url 'locations' 'Asia'%}"><h3 class="text-center">Asia</h3></a>
+            </div>
+        </div>
+        <div class="row row2">
+            <div class="location col-sm-12 col-md-3">
+                <img class="location-img" src="../../media/images/australia.jpeg" alt="">
+                <a href="{% url 'locations' 'Australia'%}"><h3 class="text-center">Australia</h3></a>
+            </div>
+            <div class="location col-sm-12 col-md-3">
+                <img class="location-img" src="../../media/images/europe.jpeg" alt="">
+                <a href="{% url 'locations' 'Europe'%}"><h3 class="text-center">Europe</h3></a>
+            </div>
+        </div>
+    </div>
+    {% block scripts %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        {% bootstrap_javascript %}
+    {% endblock %}
+</body>
+</html>

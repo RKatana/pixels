@@ -106,6 +106,8 @@ class Image(models.Model):
         """
         This is the method to get images taken in a certain location
         """
-        return cls.objects.filter(location = location)
+        the_location = Location.objects.get(name = location)
+        return cls.objects.filter(location_id = the_location.id)
+
     def __str__(self):
         return self.name

@@ -61,8 +61,13 @@ nav a {
     display: flex;
     align-items: center;
     display: inline-block;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
-
+#landing-form {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
 .under {
     color: white;
     margin: 1%;

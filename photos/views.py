@@ -18,3 +18,11 @@ def search(request):
         term = request.GET.get("term")
         photos = Image.search_image(term)
         return render(request, "search.html", {"images":photos})
+def locations_page(request):
+    return render(request,"locations.html")
+
+def locations(request,location):
+
+    photos = Image.filter_by_location(location)
+
+    return render(request,"location.html",{"images":photos,"title":location})

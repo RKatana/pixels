@@ -1,0 +1,30 @@
+* {
+    overflow-x: hidden
+}
+
+nav {
+    background: #101010;
+    margin-bottom: 15px;
+    border: none;
+    transition: background 0.8s
+    
+}
+.location {
+    max-height: 500px;
+}
+.location-img {
+    width: 100%;
+}
+#locations .row1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+#locations .row2 {
+    display: flex;
+    justify-content: space-around;
+}
+#locations {
+    margin-top: 60px;
+
+}

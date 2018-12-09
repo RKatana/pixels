@@ -4,7 +4,7 @@
 
 .image {
     max-width: 100%;
-
+    cursor: pointer;
 }
 
 .grid {
@@ -12,7 +12,9 @@
     grid-gap: 10px;
     grid-template-columns: repeat(auto-fill, minmax(250px, 10fr));
 }
-
+.container-fluid {
+    margin-top: 70px;
+}
 .grid-item {
     width: 33.3333%;
     padding: 10px;
@@ -74,10 +76,10 @@ nav a {
     display: inline-block
 }
 
-.navbar-form {
+/* .navbar-form {
     display: none;
     transition: display 0.8s
-}
+} */
 
 .navbar-form .form-control {
     height: 33px;
