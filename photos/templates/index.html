@@ -27,11 +27,13 @@
                 <div class="modal-body">
                     <img style="width: 100%;" alt="" class="mod-img">
                     <p id="img-desc"></p>
+                    <p id="img-location"></p>
+                    <p id="img-category"></p>
                 </div>
                 <div class="modal-footer">
                     <input name="" id="url-to-copy" style="position:relative;left:10000px">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="copyUrl()">Copy Url</button>
+                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary btn-sm" onclick="copyUrl()">Copy Url</button>
                 </div>
             </div>
         </div>
@@ -42,7 +44,7 @@
         <div class="row grid flex">
             {% for image in images%}
                 <div class="grid-item">
-                    <img onclick="showModal('{{image.name}}','{{image.description}}','{{image.image_url.url}}')" class="image" src="{{image.image_url.url}}">
+                    <img onclick="showModal('{{image.name}}','{{image.description}}','{{image.image_url.url}}','{{image.location.name}}','{{image.category.name}}')" class="image" src="{{image.image_url.url}}">
                 </div>
             {% endfor %}
         </div>
