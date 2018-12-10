@@ -1,6 +1,7 @@
 
 * {
-    overflow-x: hidden
+    overflow-x: hidden;
+    font-family: Maven Pro;
 }
 .image {
     max-width: 100%;

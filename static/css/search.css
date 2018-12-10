@@ -1,5 +1,6 @@
 * {
-    overflow-x: hidden
+    overflow-x: hidden;
+    font-family: Maven Pro;
 }
 
 .image {
@@ -75,11 +76,6 @@ nav a {
 .navbar-right {
     display: inline-block
 }
-
-/* .navbar-form {
-    display: none;
-    transition: display 0.8s
-} */
 
 .navbar-form .form-control {
     height: 33px;

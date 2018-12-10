@@ -8,4 +8,4 @@ $(window).scroll(() => {
         $(".navbar-form").hide()
 
     }
-})
+}) 

@@ -12,23 +12,21 @@ def index(request):
 
 def search(request):
     if "term" in request.GET and request.GET["term"]:
-        try:     
-            term = request.GET.get("term")
-            photos = Image.search_image(term)
+        term = request.GET.get("term")
+        photos = Image.search_image(term)
+        if photos != "No images found":
             message = "Photos of '" + term + "'"
-        except DoesNotExist:
-            message = "There are no images"
-        return render(request, "search.html", {"images":photos,"message":message})
-    else:
-        message = "There are no images"
-        return render(request,"search.html",{"message":message})
+            return render(request, "search.html", {"images":photos,"message":message,"title":term.capitalize()})
+        else:
+            message = "No images found"
+            return render(request, "search.html", {"images":[],"message":message,"title":term.capitalize()})
     
 
 def locations_page(request):
-    return render(request,"locations.html")
+    return render(request,"locations.html",{"title":"Locations"})
 
 def locations(request,location):
 
     photos = Image.filter_by_location(location)
 
-    return render(request,"location.html",{"images":photos,"title":location})
+    return render(request,"location.html",{"images":photos,"title":location.capitalize()})
