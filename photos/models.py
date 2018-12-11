@@ -17,7 +17,7 @@ class Location(models.Model):
         """
         This is the method to delete the instance
         """
-        Location.objects.get(id = self.id).delete()
+        self.delete()
 
     def update(self,field,val):
         """
@@ -33,7 +33,7 @@ class Category(models.Model):
     This is the class where we will create categories
     """
     name = models.CharField(max_length = 30)
-    def save_location(self):
+    def save_category(self):
         """
         This is the function that we will use to save the instance of this class
         """
@@ -43,13 +43,13 @@ class Category(models.Model):
         """
         This is the method to delete the instance
         """
-        Location.objects.get(id = self.id).delete()
+        Category.objects.get(id = self.id).delete()
 
     def update(self,field,val):
         """
         This is the method to update the instance
         """
-        Location.objects.get(id = self.id).update(field = val)
+        Category.objects.get(id = self.id).update(field = val)
 
     def __str__(self):
         return self.name
@@ -82,11 +82,11 @@ class Image(models.Model):
         Image.objects.filter(id = self.id).update(name = val)
 
     @classmethod
-    def get_image_by_id(cls,id):
+    def get_image_by_id(cls,image_id):
         """
         This is the method to get a specific image
         """
-        return cls.objects.get(id = id)
+        return cls.objects.get(id = image_id)
 
     @classmethod
     def get_images(cls):

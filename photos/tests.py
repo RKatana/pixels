@@ -16,7 +16,6 @@ class ImageTestCases(TestCase):
         africa = Location(name = "Africa")
         africa.save()
         self.new_image = Image(name = "image",description = "h",location = africa,category = funny)
-        self.new_image.save()
     
     def tearDown(self):
         """
@@ -31,6 +30,7 @@ class ImageTestCases(TestCase):
         This will test whether the new image created is an instance of the Image class
         """
         self.assertTrue(isinstance(self.new_image, Image))
+
     def test_init(self):
         """
         This will test whether the new image is instantiated correctly
@@ -41,8 +41,7 @@ class ImageTestCases(TestCase):
         """
         This will test whether the new image is added to the db
         """
-        g = Image(name = "2")
-        g.save_image()
+        self.new_image.save_image()
         self.assertTrue(len(Image.objects.all()) > 0)
 
     def test_delete_image(self):
@@ -53,23 +52,6 @@ class ImageTestCases(TestCase):
         self.assertTrue(len(Image.objects.all()) > 0)
         self.new_image.delete_image()
         self.assertTrue(len(Image.objects.all()) == 0)
-
-    def test_update_image(self):
-        """
-        This will test whether the image details are updated
-        """
-        g = Image(name = "hey")
-        g.save_image()
-        Image.objects.filter(name = "hey").update("bye")
-        self.assertTrue(g.name == "bye")
-
-    def test_get_image_by_id(self):
-        """
-        This will test whether the specific image is queried from the db
-        """
-        self.new_image.save_image()
-        queried_image = Image.get_image_by_id(1)
-        self.assertTrue(queried_image.description == "h")
 
     def test_get_images(self):
         """
@@ -82,11 +64,75 @@ class ImageTestCases(TestCase):
         """
         This will test whether the image is queried based on category
         """
-        self.assertTrue(len(Image.search_image("funny")) == 1)
+        self.new_image.save_image()
+        self.assertTrue(len(Image.search_image("funny")) > 0)
 
     def test_filter_by_location(self):
         """
         This will test whether the filter_by_loc will return photos in a certain category
         """
+        self.new_image.save_image()
         self.assertTrue(len(Image.filter_by_location("Africa")) == 1)
 
+class LocationTestCases(TestCase):
+    """
+    This is the class we will use to test the Locations
+    """
+    def setUp(self):
+        self.new_location = Location(name = "Moringa")
+
+    def tearDown(self):
+        """
+        This will clear the db after each test
+        """
+        Location.objects.all().delete()
+
+    def test_instance(self):
+        """
+        This will test whether the location created is an instance of the Location class
+        """
+        self.assertTrue(isinstance(self.new_location,Location))
+    def test_init(self):
+        """
+        This will test whether the new location is instantiated correctly
+        """
+        self.assertTrue(self.new_location.name == "Moringa")
+
+    def test_save_location(self):
+        """
+        This will test whether the new location is added to the db
+        """
+        self.new_location.save_location()
+        self.assertTrue(len(Location.objects.all()) == 1)
+
+class CategoryTestCases(TestCase):
+    """
+    This is the class we will use to test the Locations
+    """
+    def setUp(self):
+        self.new_category = Category(name = "Moringa")
+
+    def tearDown(self):
+        """
+        This will clear the db after each test
+        """
+        Category.objects.all().delete()
+
+    def test_instance(self):
+        """
+        This will test whether the category created is an instance of the Category class
+        """
+        self.assertTrue(isinstance(self.new_category,Category))
+
+    def test_init(self):
+        """
+        This will test whether the new category is instantiated correctly
+        """
+        self.assertTrue(self.new_category.name == "Moringa")
+
+    def test_save_category(self):
+        """
+        This will test whether the new category is added to the db
+        """
+        self.new_category.save_category()
+        self.assertTrue(len(Category.objects.all()) == 1)
