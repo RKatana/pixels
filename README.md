@@ -88,7 +88,7 @@ $ sudo apt-get install postgresql postgresql-contrib libpq-dev
 Currently, there are no known bugs
 
 ### Live link
-You can view the live site [here]()
+You can view the live site [here](http://pixelola.herokuapp.com/)
 ### Licence
 This project is under the [MIT](https://github.com/marvinChomba/pixels/blob/master/LICENSE) licence
 
