@@ -44,10 +44,38 @@ $ pip install django==1.11
 #postgres
 $ sudo apt-get install postgresql postgresql-contrib libpq-dev
 ```
+### Requirements
+config==0.4.0
+dj-database-url==0.5.0
+Django==1.11
+django-bootstrap3==11.0.0
+django-bootstrap4==0.0.7
+django-heroku==0.3.1
+gunicorn==19.9.0
+Jinja2==2.10
+MarkupSafe==1.1.0
+Pillow==5.3.0
+psycopg2==2.7.6.1
+python-decouple==3.1
+pytz==2018.7
+### .ENV file
+SECRET_KEY='<SECRET_KEY>'
+DEBUG=True #set to false in production
+DB_NAME='tribune'
+DB_USER='user'
+DB_PASSWORD='password'
+DB_HOST='127.0.0.1'
+MODE='dev' #set to 'prod' in production
+ALLOWED_HOSTS='.localhost', '.herokuapp.com', '.127.0.0.1'
+DISABLE_COLLECTSTATIC=1
 
 ### Installation
 1. To access this application on your command line, you need to clone it 
 `git clone https://github.com/marvinChomba/pixels.git`
+1. Create a requirements.txt in the root folder and copy the requirements above.
+1. Install the required technologies with
+`pip install -r requirements.txt`
+1. Create a .env file and copy the .env code above
 1. You can then run the server with:
 `python3.6 manage.py runserver`
 1. You can make changes to the db with
