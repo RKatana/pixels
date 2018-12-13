@@ -84,6 +84,10 @@ $ sudo apt-get install postgresql postgresql-contrib libpq-dev
 4. You can run tests:
 `python3.6 manage.py test photos`
 
+### Django Admin
+Username: marvin_chomba
+Password:<see_me>
+
 ### Known Bugs :x:
 Currently, there are no known bugs
 
